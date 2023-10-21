@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from './app.module.css'
-import PixabayService from 'services/PixabayService'
+import usePixabayService from 'services/PixabayService'
 import { Button, ImageGallery, Loader, Modal, Searchbar } from 'components'
 
 const App = () => {
@@ -8,7 +8,7 @@ const App = () => {
   const [images, setImages] = useState([])
   const [page, setPage] = useState(1)
   const [perPage] = useState(12)
-  const { getImages, loading, error } = PixabayService()
+  const { getImages, loading, error } = usePixabayService()
   const [isOpen, setIsOpen] = useState(false)
   const [currentImage, setCurrentImage] = useState(null)
   const [totalHits, setTotalHits] = useState(0)

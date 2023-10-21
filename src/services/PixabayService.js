@@ -1,6 +1,6 @@
 import { useHttp } from "hooks/http.hook";
 
-const PixabayService = () => {
+const usePixabayService = () => {
   const { loading, request, error, clearError } = useHttp()
   const _apiBase = 'https://pixabay.com/api/'
   const _apiKey = '40025638-0e05185563b3cbe783cea860e'
@@ -66,4 +66,4 @@ const PixabayService = () => {
   }
 }
 
-export default PixabayService
+export default usePixabayService
