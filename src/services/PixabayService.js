@@ -52,7 +52,10 @@ const PixabayService = () => {
   async function getImages (paramsObject) {
     const url = injectQueryParamsIntoUrl(paramsObject)
     const data = await request(url)
-    return transformImageData(data.hits)
+    return {
+      hits: transformImageData(data.hits),
+      totalHits: data.totalHits
+    }
   }
 
   return {
